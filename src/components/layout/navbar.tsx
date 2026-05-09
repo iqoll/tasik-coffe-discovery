@@ -29,6 +29,9 @@ export function Navbar() {
             <MapPin className="w-4 h-4" />
             Area
           </Link>
+          <Link href="/admin/login" className="transition-colors hover:text-primary bg-stone-900 hover:bg-stone-800 rounded-full px-3 py-1.5 text-white hover:text-white flex items-center gap-1.5">
+            Admin
+          </Link>
         </nav>
 
         {/* Mobile Nav Toggle (placeholder for actual functionality) */}
