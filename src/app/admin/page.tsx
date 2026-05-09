@@ -2,8 +2,9 @@
 
 import {
   Coffee, Users, MapPin, Plus, Edit2, Trash2,
-  ExternalLink, Search, Settings,
-  BarChart3, CheckCircle2, MoreHorizontal
+  Search, Settings,
+  BarChart3, CheckCircle2, MoreHorizontal,
+  MousePointerClick, Filter, Store
 } from 'lucide-react';
 import Link from 'next/link';
 import { MOCK_CAFES } from '@/constants/mock-data';
@@ -31,19 +32,21 @@ export default function AdminDashboard() {
 
       <div className="p-10">
         {/* Stats Bar */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {[
-            { label: 'Total Cafe', value: MOCK_CAFES.length.toString(), icon: <Coffee />, color: 'bg-stone-900' },
-            { label: 'Total Member', value: '1,204', icon: <Users />, color: 'bg-stone-600' },
-            { label: 'Page Views', value: '8.4k', icon: <BarChart3 />, color: 'bg-stone-400' },
-            { label: 'Active Areas', value: '5', icon: <MapPin />, color: 'bg-stone-200' },
+            { label: 'Total Coffee Shop', value: MOCK_CAFES.length.toString(), icon: <Coffee />, color: 'bg-stone-900' },
+            { label: 'Page Views', value: '12.4k', icon: <BarChart3 />, color: 'bg-stone-800' },
+            { label: 'Penggunaan Filter', value: '3.2k', icon: <Filter />, color: 'bg-stone-700' },
+            { label: 'Klik Maps / IG', value: '1,840', icon: <MousePointerClick />, color: 'bg-stone-600' },
+            { label: 'Cafe Partner', value: '3', icon: <Store />, color: 'bg-stone-500' },
+            { label: 'Active Areas', value: '5', icon: <MapPin />, color: 'bg-stone-400' },
           ].map((stat) => (
-            <div key={stat.label} className="bg-white p-8 rounded-[32px] border border-stone-200 shadow-sm">
-              <div className={`${stat.color} w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-6`}>
+            <div key={stat.label} className="bg-white p-8 rounded-[32px] border border-stone-200 shadow-sm flex items-center gap-6">
+              <div className={`${stat.color} w-16 h-16 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg`}>
                 {stat.icon}
               </div>
               <div>
-                <p className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">{stat.label}</p>
+                <p className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-1">{stat.label}</p>
                 <h3 className="text-3xl font-serif font-bold text-stone-900">{stat.value}</h3>
               </div>
             </div>
