@@ -1,9 +1,9 @@
 "use client";
 
-import { 
-  Coffee, Users, MapPin, Plus, Edit2, Trash2, 
-  ExternalLink, LogOut, Search, Settings, 
-  BarChart3, CheckCircle2, MoreHorizontal 
+import {
+  Coffee, Users, MapPin, Plus, Edit2, Trash2,
+  ExternalLink, LogOut, Search, Settings,
+  BarChart3, CheckCircle2, MoreHorizontal
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -41,12 +41,12 @@ export default function AdminDashboard() {
         </nav>
 
         <div className="p-10 border-t border-stone-800">
-           <button 
+          <button
             onClick={() => router.push('/admin/login')}
             className="flex items-center gap-4 text-stone-400 font-bold text-sm hover:text-red-400 transition-colors"
-           >
-             <LogOut className="w-5 h-5" /> Keluar Panel
-           </button>
+          >
+            <LogOut className="w-5 h-5" /> Keluar Panel
+          </button>
         </div>
       </aside>
 
@@ -57,9 +57,9 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-6">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
-              <input 
-                type="text" 
-                placeholder="Cari data..." 
+              <input
+                type="text"
+                placeholder="Cari data..."
                 className="pl-10 pr-4 py-2 bg-stone-50 border border-stone-100 rounded-xl text-sm focus:outline-none focus:border-stone-300 transition-all"
               />
             </div>
@@ -80,7 +80,7 @@ export default function AdminDashboard() {
             ].map((stat) => (
               <div key={stat.label} className="bg-white p-8 rounded-[32px] border border-stone-200 shadow-sm">
                 <div className={`${stat.color} w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-6`}>
-                   {stat.icon}
+                  {stat.icon}
                 </div>
                 <div>
                   <p className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">{stat.label}</p>
@@ -94,12 +94,12 @@ export default function AdminDashboard() {
           <div className="bg-white rounded-[40px] border border-stone-200 overflow-hidden shadow-sm">
             <div className="p-8 border-b border-stone-100 flex items-center justify-between">
               <div>
-                 <h3 className="text-xl font-bold text-stone-900">Daftar Coffee Shop</h3>
-                 <p className="text-sm text-stone-500 font-medium">Data terbaru coffee shop yang terdaftar</p>
+                <h3 className="text-xl font-bold text-stone-900">Daftar Coffee Shop</h3>
+                <p className="text-sm text-stone-500 font-medium">Data terbaru coffee shop yang terdaftar</p>
               </div>
-              <button className="px-6 py-3 bg-stone-900 text-white rounded-2xl font-bold text-sm hover:scale-105 transition-all flex items-center gap-2">
+              <Link href="/admin/cafes/new" className="px-6 py-3 bg-stone-900 text-white rounded-2xl font-bold text-sm hover:scale-105 transition-all flex items-center gap-2">
                 <Plus className="w-4 h-4" /> Tambah Cafe
-              </button>
+              </Link>
             </div>
 
             <div className="overflow-x-auto">
@@ -117,20 +117,20 @@ export default function AdminDashboard() {
                     <tr key={cafe.id} className="hover:bg-stone-50 transition-colors">
                       <td className="px-8 py-6">
                         <div className="flex items-center gap-4">
-                           <div className="w-12 h-12 rounded-xl overflow-hidden bg-stone-100 shrink-0">
-                             {cafe.photos && cafe.photos.length > 0 ? (
-                               /* eslint-disable-next-line @next/next/no-img-element */
-                               <img src={cafe.photos[0].image_url} alt={cafe.name} className="w-full h-full object-cover" />
-                             ) : (
-                               <div className="w-full h-full bg-stone-200 flex items-center justify-center">
-                                 <Coffee className="w-5 h-5 text-stone-400" />
-                               </div>
-                             )}
-                           </div>
-                           <div>
-                             <p className="font-bold text-stone-900">{cafe.name}</p>
-                             <p className="text-xs text-stone-500">{cafe.created_at.split('T')[0]}</p>
-                           </div>
+                          <div className="w-12 h-12 rounded-xl overflow-hidden bg-stone-100 shrink-0">
+                            {cafe.photos && cafe.photos.length > 0 ? (
+                              /* eslint-disable-next-line @next/next/no-img-element */
+                              <img src={cafe.photos[0].image_url} alt={cafe.name} className="w-full h-full object-cover" />
+                            ) : (
+                              <div className="w-full h-full bg-stone-200 flex items-center justify-center">
+                                <Coffee className="w-5 h-5 text-stone-400" />
+                              </div>
+                            )}
+                          </div>
+                          <div>
+                            <p className="font-bold text-stone-900">{cafe.name}</p>
+                            <p className="text-xs text-stone-500">{cafe.created_at.split('T')[0]}</p>
+                          </div>
                         </div>
                       </td>
                       <td className="px-8 py-6">
@@ -146,7 +146,7 @@ export default function AdminDashboard() {
                       </td>
                       <td className="px-8 py-6 text-right">
                         <div className="flex items-center justify-end gap-3 text-stone-400">
-                          <button className="hover:text-stone-900 p-2 hover:bg-stone-100 rounded-lg transition-all"><Edit2 className="w-4 h-4" /></button>
+                          <Link href={`/admin/cafes/${cafe.id}`} className="hover:text-stone-900 p-2 hover:bg-stone-100 rounded-lg transition-all"><Edit2 className="w-4 h-4" /></Link>
                           <button className="hover:text-red-500 p-2 hover:bg-red-50 rounded-lg transition-all"><Trash2 className="w-4 h-4" /></button>
                           <button className="hover:text-stone-900 p-2 hover:bg-stone-100 rounded-lg transition-all"><MoreHorizontal className="w-4 h-4" /></button>
                         </div>
