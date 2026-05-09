@@ -1,5 +1,5 @@
 import type { Feature } from "@/types/feature";
-import { Wifi, Plug, Laptop, TreePine, Cigarette, Music, Users, Moon } from "lucide-react";
+import { Wifi, Plug, Laptop, TreePine, Cigarette, Music, Users, Moon, Clock } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 export const FEATURES: Feature[] = [
@@ -11,6 +11,7 @@ export const FEATURES: Feature[] = [
   { id: "f6", name: "Live Music", slug: "live-music", icon: "Music" },
   { id: "f7", name: "Meeting Friendly", slug: "meeting-friendly", icon: "Users" },
   { id: "f8", name: "Mushola", slug: "prayer-room", icon: "Moon" },
+  { id: "f9", name: "Open Now", slug: "open-now", icon: "Clock" },
 ];
 
 export const FILTER_OPTIONS = FEATURES.map((f) => ({
@@ -34,4 +35,5 @@ export const FILTER_DEFINITIONS: FilterDefinition[] = [
   { id: "live-music", label: "Live Music", icon: Music },
   { id: "meeting-friendly", label: "Meeting Friendly", icon: Users },
   { id: "prayer-room", label: "Mushola", icon: Moon },
+  { id: "open-now", label: "Open Now", icon: Clock },
 ];
