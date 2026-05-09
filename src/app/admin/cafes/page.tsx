@@ -1,25 +1,24 @@
 "use client";
 
 import {
-  Coffee, Users, MapPin, Plus, Edit2, Trash2,
-  ExternalLink, Search, Settings,
-  BarChart3, CheckCircle2, MoreHorizontal
+  Coffee, Plus, Edit2, Trash2,
+  Search, Settings, CheckCircle2, MoreHorizontal
 } from 'lucide-react';
 import Link from 'next/link';
 import { MOCK_CAFES } from '@/constants/mock-data';
 import { AdminLayout } from '@/components/admin/admin-layout';
 
-export default function AdminDashboard() {
+export default function AdminCafesPage() {
   return (
     <AdminLayout>
       <header className="h-20 bg-white border-b border-stone-200 flex items-center justify-between px-10 sticky top-0 z-10">
-        <h2 className="text-xl font-serif font-bold text-stone-900">Ringkasan Produk</h2>
+        <h2 className="text-xl font-serif font-bold text-stone-900">Kelola Coffee Shop</h2>
         <div className="flex items-center gap-6">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
             <input
               type="text"
-              placeholder="Cari data..."
+              placeholder="Cari cafe..."
               className="pl-10 pr-4 py-2 bg-stone-50 border border-stone-100 rounded-xl text-sm focus:outline-none focus:border-stone-300 transition-all"
             />
           </div>
@@ -30,32 +29,11 @@ export default function AdminDashboard() {
       </header>
 
       <div className="p-10">
-        {/* Stats Bar */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          {[
-            { label: 'Total Cafe', value: MOCK_CAFES.length.toString(), icon: <Coffee />, color: 'bg-stone-900' },
-            { label: 'Total Member', value: '1,204', icon: <Users />, color: 'bg-stone-600' },
-            { label: 'Page Views', value: '8.4k', icon: <BarChart3 />, color: 'bg-stone-400' },
-            { label: 'Active Areas', value: '5', icon: <MapPin />, color: 'bg-stone-200' },
-          ].map((stat) => (
-            <div key={stat.label} className="bg-white p-8 rounded-[32px] border border-stone-200 shadow-sm">
-              <div className={`${stat.color} w-12 h-12 rounded-2xl flex items-center justify-center text-white mb-6`}>
-                {stat.icon}
-              </div>
-              <div>
-                <p className="text-xs font-bold text-stone-400 uppercase tracking-widest mb-2">{stat.label}</p>
-                <h3 className="text-3xl font-serif font-bold text-stone-900">{stat.value}</h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Table Listing */}
         <div className="bg-white rounded-[40px] border border-stone-200 overflow-hidden shadow-sm">
           <div className="p-8 border-b border-stone-100 flex items-center justify-between">
             <div>
               <h3 className="text-xl font-bold text-stone-900">Daftar Coffee Shop</h3>
-              <p className="text-sm text-stone-500 font-medium">Data terbaru coffee shop yang terdaftar</p>
+              <p className="text-sm text-stone-500 font-medium">Kelola semua data coffee shop yang ada</p>
             </div>
             <Link href="/admin/cafes/new" className="px-6 py-3 bg-stone-900 text-white rounded-2xl font-bold text-sm hover:scale-105 transition-all flex items-center gap-2">
               <Plus className="w-4 h-4" /> Tambah Cafe

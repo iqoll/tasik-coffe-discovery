@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { CafeForm } from "@/components/admin/cafe-form";
 import { MOCK_CAFES } from "@/constants/mock-data";
+import { AdminLayout } from "@/components/admin/admin-layout";
 
 export const metadata = {
   title: "Edit Cafe | Admin Tasik Coffee",
@@ -23,8 +24,10 @@ export default async function EditCafePage({ params }: EditCafePageProps) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <CafeForm initialData={cafe} />
-    </div>
+    <AdminLayout>
+      <div className="container mx-auto px-4 py-8">
+        <CafeForm initialData={cafe} />
+      </div>
+    </AdminLayout>
   );
 }
