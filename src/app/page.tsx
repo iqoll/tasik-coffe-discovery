@@ -6,6 +6,7 @@ import { CafeList } from "@/components/cafes/cafe-list";
 import { AreaCard } from "@/components/areas/area-card";
 import { MOCK_CAFES, MOCK_AREAS } from "@/constants/mock-data";
 import { FILTER_DEFINITIONS } from "@/constants/filters";
+import { RandomCafePicker } from "@/components/cafes/random-cafe-picker";
 
 export default function Home() {
   const featuredCafes = MOCK_CAFES.slice(0, 3);
@@ -17,7 +18,7 @@ export default function Home() {
       <section className="relative py-20 md:py-32 px-4 flex flex-col items-center justify-center text-center overflow-hidden">
         <div className="absolute inset-0 bg-secondary/20 -z-10" />
         <div className="absolute top-0 w-full h-[500px] bg-gradient-to-b from-primary/5 to-transparent -z-10" />
-        
+
         <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold max-w-4xl tracking-tight text-foreground mb-6">
           Temukan <span className="text-primary italic">Coffee Shop</span> Terbaik di Tasikmalaya
         </h1>
@@ -28,7 +29,7 @@ export default function Home() {
         {/* Search & Filter Shortcuts */}
         <div className="w-full max-w-2xl flex flex-col items-center gap-6">
           <SearchBar placeholder="Cari nama cafe atau area..." />
-          
+
           <div className="flex flex-wrap justify-center gap-3">
             {popularFilters.map((filter) => {
               const Icon = filter.icon;
@@ -40,6 +41,7 @@ export default function Home() {
             })}
           </div>
         </div>
+        <RandomCafePicker />
       </section>
 
       {/* Featured Cafes Section */}
@@ -78,13 +80,13 @@ export default function Home() {
         <div className="bg-primary text-primary-foreground rounded-3xl p-8 md:p-16 text-center relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-          
+
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="font-heading text-3xl md:text-5xl font-bold mb-6">Punya Rekomendasi Coffee Shop?</h2>
             <p className="text-lg text-primary-foreground/80 mb-10">
               Bantu kami melengkapi direktori coffee shop di Tasikmalaya. Bagikan tempat favoritmu agar lebih banyak orang tahu!
             </p>
-            <Link 
+            <Link
               href="#"
               className="inline-block bg-background text-foreground font-semibold px-8 py-4 rounded-full transition-transform hover:scale-105"
             >

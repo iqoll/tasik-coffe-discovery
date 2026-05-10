@@ -17,7 +17,7 @@ function CafeExplorer() {
   );
 
   const handleFilterChange = (filterSlug: string) => {
-    setSelectedFilters(prev => 
+    setSelectedFilters(prev =>
       prev.includes(filterSlug)
         ? prev.filter(f => f !== filterSlug)
         : [...prev, filterSlug]
@@ -27,12 +27,12 @@ function CafeExplorer() {
   const filteredCafes = useMemo(() => {
     return MOCK_CAFES.filter(cafe => {
       // 1. Filter by search query
-      const matchesSearch = 
+      const matchesSearch =
         cafe.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         cafe.area?.name.toLowerCase().includes(searchQuery.toLowerCase());
-      
+
       // 2. Filter by selected features (must have ALL selected features)
-      const matchesFilters = selectedFilters.length === 0 || selectedFilters.every(filterSlug => 
+      const matchesFilters = selectedFilters.length === 0 || selectedFilters.every(filterSlug =>
         cafe.features?.some(f => f.slug === filterSlug)
       );
 
@@ -43,14 +43,14 @@ function CafeExplorer() {
   return (
     <>
       <div className="flex flex-col gap-6 mb-8">
-        <SearchBar 
-          placeholder="Cari nama cafe atau area..." 
+        <SearchBar
+          placeholder="Cari nama cafe atau area..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           wrapperClassName="max-w-xl"
         />
-        
-        <CafeFilters 
+
+        <CafeFilters
           selectedFilters={selectedFilters}
           onChange={handleFilterChange}
         />
@@ -59,7 +59,7 @@ function CafeExplorer() {
       <div className="mb-6 flex justify-between items-center text-sm text-muted-foreground">
         <p>Menampilkan {filteredCafes.length} coffee shop</p>
         {selectedFilters.length > 0 && (
-          <button 
+          <button
             onClick={() => setSelectedFilters([])}
             className="text-primary hover:underline font-medium"
           >
