@@ -6,6 +6,7 @@ import { SearchBar } from "@/components/ui/search-bar";
 import { CafeFilters } from "@/components/cafes/cafe-filters";
 import { CafeList } from "@/components/cafes/cafe-list";
 import { MOCK_CAFES } from "@/constants/mock-data";
+import { AdBanner } from "@/components/ui/ad-banner";
 
 function CafeExplorer() {
   const searchParams = useSearchParams();
@@ -86,6 +87,10 @@ export default function CafesPage() {
       <Suspense fallback={<div className="py-20 text-center text-muted-foreground">Memuat data...</div>}>
         <CafeExplorer />
       </Suspense>
+
+      <div className="mt-16">
+        <AdBanner size="leaderboard" />
+      </div>
     </div>
   );
 }

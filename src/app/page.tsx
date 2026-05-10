@@ -7,6 +7,7 @@ import { AreaCard } from "@/components/areas/area-card";
 import { MOCK_CAFES, MOCK_AREAS } from "@/constants/mock-data";
 import { FILTER_DEFINITIONS } from "@/constants/filters";
 import { RandomCafePicker } from "@/components/cafes/random-cafe-picker";
+import { AdBanner } from "@/components/ui/ad-banner";
 
 export default function Home() {
   const featuredCafes = MOCK_CAFES.slice(0, 3);
@@ -59,6 +60,11 @@ export default function Home() {
         <CafeList cafes={featuredCafes} />
       </section>
 
+      {/* Ad Banner 1 */}
+      <section className="py-8 px-4 container mx-auto">
+        <AdBanner size="leaderboard" />
+      </section>
+
       {/* Popular Areas Section */}
       <section className="py-16 md:py-24 px-4 bg-secondary/30">
         <div className="container mx-auto">
@@ -73,6 +79,11 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Ad Banner 2 */}
+      <section className="py-8 px-4 container mx-auto">
+        <AdBanner size="leaderboard" />
       </section>
 
       {/* CTA Section */}

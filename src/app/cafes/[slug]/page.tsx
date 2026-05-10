@@ -58,28 +58,10 @@ export default async function CafeDetailPage({ params }: CafeDetailPageProps) {
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">{cafe.name}</h1>
 
             <div className="flex flex-wrap items-center gap-4 text-muted-foreground mb-6">
-              {cafe.area && (
-                <Link href={`/areas/${cafe.area.slug}`} className="flex items-center gap-1.5 hover:text-primary transition-colors">
-                  <MapPin className="w-4 h-4" />
-                  {cafe.area.name}
-                </Link>
-              )}
               <div className="flex items-center gap-1.5">
                 <MapPin className="w-4 h-4" />
                 {cafe.address}
               </div>
-              {cafe.instagram_url && (
-                <a href={cafe.instagram_url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-                  <InstagramIcon className="w-4 h-4" />
-                  Instagram
-                </a>
-              )}
-              {cafe.maps_url && (
-                <a href={cafe.maps_url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:text-primary transition-colors">
-                  <ExternalLink className="w-4 h-4" />
-                  Google Maps
-                </a>
-              )}
             </div>
 
             <div className="prose prose-zinc dark:prose-invert max-w-none">
@@ -118,6 +100,14 @@ export default async function CafeDetailPage({ params }: CafeDetailPageProps) {
                   </span>
                 </div>
               ))}
+              {cafe.area && (
+                <h3 className="font-semibold text-lg">
+                  <Link href={`/areas/${cafe.area.slug}`} className="flex items-center mt-4 hover:text-primary transition-colors">
+                    <MapPin className="w-5 h-5" />
+                    Area: {cafe.area.name}
+                  </Link>
+                </h3>
+              )}
             </div>
           </div>
 
