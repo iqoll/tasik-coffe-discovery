@@ -1,5 +1,6 @@
 import type { Area } from "@/types/area";
 import type { Cafe } from "@/types/cafe";
+import type { Feature } from "@/types/feature";
 
 export const MOCK_AREAS: Area[] = [
   {
@@ -44,6 +45,57 @@ export const MOCK_AREAS: Area[] = [
   },
 ];
 
+export const FEATURES: Feature[] = [
+  {
+    id: "f1",
+    name: "WiFi",
+    slug: "wifi",
+    icon: "Wifi",
+  },
+  {
+    id: "f2",
+    name: "Power Outlet",
+    slug: "power-outlet",
+    icon: "Plug",
+  },
+  {
+    id: "f3",
+    name: "Work Friendly",
+    slug: "work-friendly",
+    icon: "Laptop",
+  },
+  {
+    id: "f4",
+    name: "Outdoor",
+    slug: "outdoor",
+    icon: "TreePine",
+  },
+  {
+    id: "f5",
+    name: "Smoking Area",
+    slug: "smoking-area",
+    icon: "Cigarette",
+  },
+  {
+    id: "f6",
+    name: "Pet Friendly",
+    slug: "pet-friendly",
+    icon: "PawPrint",
+  },
+  {
+    id: "f7",
+    name: "Meeting Friendly",
+    slug: "meeting-friendly",
+    icon: "Users",
+  },
+  {
+    id: "f8",
+    name: "Mushola",
+    slug: "prayer-room",
+    icon: "Moon",
+  },
+];
+
 export const MOCK_CAFES: Cafe[] = [
   {
     id: "c1",
@@ -69,12 +121,7 @@ export const MOCK_CAFES: Cafe[] = [
     is_published: true,
     created_at: "2024-01-01T00:00:00Z",
     area: MOCK_AREAS[0],
-    features: [
-      { id: "f1", name: "WiFi", slug: "wifi", icon: "Wifi" },
-      { id: "f2", name: "Power Outlet", slug: "power-outlet", icon: "Plug" },
-      { id: "f3", name: "Work Friendly", slug: "work-friendly", icon: "Laptop" },
-      { id: "f8", name: "Mushola", slug: "prayer-room", icon: "Moon" },
-    ],
+    features: [FEATURES[0], FEATURES[1], FEATURES[2], FEATURES[7]],
     photos: [
       { id: "p1", cafe_id: "c1", image_url: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80", sort_order: 1 },
       { id: "p2", cafe_id: "c1", image_url: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800&q=80", sort_order: 2 },
@@ -105,11 +152,7 @@ export const MOCK_CAFES: Cafe[] = [
     is_published: true,
     created_at: "2024-01-15T00:00:00Z",
     area: MOCK_AREAS[0],
-    features: [
-      { id: "f4", name: "Outdoor", slug: "outdoor", icon: "TreePine" },
-      { id: "f5", name: "Smoking Area", slug: "smoking-area", icon: "Cigarette" },
-      { id: "f7", name: "Meeting Friendly", slug: "meeting-friendly", icon: "Users" },
-    ],
+    features: [FEATURES[3], FEATURES[4], FEATURES[6]],
     photos: [
       { id: "p4", cafe_id: "c2", image_url: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80", sort_order: 1 },
       { id: "p5", cafe_id: "c2", image_url: "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=800&q=80", sort_order: 2 },
@@ -139,13 +182,7 @@ export const MOCK_CAFES: Cafe[] = [
     is_published: true,
     created_at: "2024-02-01T00:00:00Z",
     area: MOCK_AREAS[1],
-    features: [
-      { id: "f1", name: "WiFi", slug: "wifi", icon: "Wifi" },
-      { id: "f2", name: "Power Outlet", slug: "power-outlet", icon: "Plug" },
-      { id: "f3", name: "Work Friendly", slug: "work-friendly", icon: "Laptop" },
-      { id: "f4", name: "Outdoor", slug: "outdoor", icon: "TreePine" },
-      { id: "f8", name: "Mushola", slug: "prayer-room", icon: "Moon" },
-    ],
+    features: [FEATURES[0], FEATURES[1], FEATURES[2], FEATURES[3], FEATURES[7]],
     photos: [
       { id: "p6", cafe_id: "c3", image_url: "https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800&q=80", sort_order: 1 },
       { id: "p7", cafe_id: "c3", image_url: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80", sort_order: 2 },
@@ -175,13 +212,7 @@ export const MOCK_CAFES: Cafe[] = [
     is_published: true,
     created_at: "2024-02-15T00:00:00Z",
     area: MOCK_AREAS[2],
-    features: [
-      { id: "f1", name: "WiFi", slug: "wifi", icon: "Wifi" },
-      { id: "f2", name: "Power Outlet", slug: "power-outlet", icon: "Plug" },
-      { id: "f3", name: "Work Friendly", slug: "work-friendly", icon: "Laptop" },
-      { id: "f7", name: "Meeting Friendly", slug: "meeting-friendly", icon: "Users" },
-      { id: "f8", name: "Mushola", slug: "prayer-room", icon: "Moon" },
-    ],
+    features: [FEATURES[0], FEATURES[1], FEATURES[2], FEATURES[6], FEATURES[7]],
     photos: [
       { id: "p8", cafe_id: "c4", image_url: "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800&q=80", sort_order: 1 },
       { id: "p9", cafe_id: "c4", image_url: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=800&q=80", sort_order: 2 },
@@ -211,12 +242,7 @@ export const MOCK_CAFES: Cafe[] = [
     is_published: true,
     created_at: "2024-03-01T00:00:00Z",
     area: MOCK_AREAS[3],
-    features: [
-      { id: "f4", name: "Outdoor", slug: "outdoor", icon: "TreePine" },
-      { id: "f5", name: "Smoking Area", slug: "smoking-area", icon: "Cigarette" },
-      { id: "f6", name: "Live Music", slug: "live-music", icon: "Music" },
-      { id: "f8", name: "Mushola", slug: "prayer-room", icon: "Moon" },
-    ],
+    features: [FEATURES[3], FEATURES[4], FEATURES[5], FEATURES[7]],
     photos: [
       { id: "p10", cafe_id: "c5", image_url: "https://images.unsplash.com/photo-1470338745628-171cf53de3a8?w=800&q=80", sort_order: 1 },
       { id: "p11", cafe_id: "c5", image_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80", sort_order: 2 },
@@ -246,11 +272,7 @@ export const MOCK_CAFES: Cafe[] = [
     is_published: true,
     created_at: "2024-03-15T00:00:00Z",
     area: MOCK_AREAS[4],
-    features: [
-      { id: "f4", name: "Outdoor", slug: "outdoor", icon: "TreePine" },
-      { id: "f1", name: "WiFi", slug: "wifi", icon: "Wifi" },
-      { id: "f8", name: "Mushola", slug: "prayer-room", icon: "Moon" },
-    ],
+    features: [FEATURES[3], FEATURES[0], FEATURES[7]],
     photos: [
       { id: "p12", cafe_id: "c6", image_url: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=800&q=80", sort_order: 1 },
       { id: "p13", cafe_id: "c6", image_url: "https://images.unsplash.com/photo-1493857671505-72967e2e2760?w=800&q=80", sort_order: 2 },
@@ -280,10 +302,7 @@ export const MOCK_CAFES: Cafe[] = [
     is_published: true,
     created_at: "2024-04-01T00:00:00Z",
     area: MOCK_AREAS[1],
-    features: [
-      { id: "f5", name: "Smoking Area", slug: "smoking-area", icon: "Cigarette" },
-      { id: "f6", name: "Live Music", slug: "live-music", icon: "Music" },
-    ],
+    features: [FEATURES[5], FEATURES[6]],
     photos: [
       { id: "p14", cafe_id: "c7", image_url: "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=800&q=80", sort_order: 1 },
       { id: "p15", cafe_id: "c7", image_url: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80", sort_order: 2 },
@@ -313,10 +332,7 @@ export const MOCK_CAFES: Cafe[] = [
     is_published: true,
     created_at: "2024-04-15T00:00:00Z",
     area: MOCK_AREAS[2],
-    features: [
-      { id: "f1", name: "WiFi", slug: "wifi", icon: "Wifi" },
-      { id: "f8", name: "Mushola", slug: "prayer-room", icon: "Moon" },
-    ],
+    features: [FEATURES[0], FEATURES[7]],
     photos: [
       { id: "p16", cafe_id: "c8", image_url: "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=800&q=80", sort_order: 1 },
       { id: "p17", cafe_id: "c8", image_url: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800&q=80", sort_order: 2 },
