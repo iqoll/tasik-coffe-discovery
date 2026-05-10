@@ -73,10 +73,10 @@ export function CafeCard({ cafe, className }: CafeCardProps) {
             )}
           </div>
           
-          {cafe.opening_hours?.monday && (
+          {cafe.opening_hours?.senin && (
             <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium">
               <Clock className="w-3.5 h-3.5" />
-              <span>{cafe.opening_hours.monday.open} - {cafe.opening_hours.monday.close}</span>
+              <span>{cafe.opening_hours.senin.open} - {cafe.opening_hours.senin.close}</span>
             </div>
           )}
         </div>
